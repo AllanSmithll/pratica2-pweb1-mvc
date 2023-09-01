@@ -10,15 +10,14 @@
         Numero: <input id="numero"> <br>
         Saldo: <input id="saldo"><br>
         Data Aniversario: <input id="data_aniversario">
+        <select name="tipo-conta" id="tipo-conta">
+            <option value="conta-normal" selected>Conta</option>
+            <option value="conta-bonificada">Conta Bonificada</option>
+            <option value="conta-poupanca">Poupança</option>
+        </select>
         <button onclick="contaController.inserir(event)">Inserir</button>
     </form>
     <label for="tipo-conta">Escolha o tipo de conta: </label>
-
-    <select name="tipo-conta" id="tipo-conta">
-        <option value="conta-normal" selected>Conta</option>
-        <option value="conta-bonificada">Conta Bonificada</option>
-        <option value="conta-poupanca">Poupança</option>
-    </select>
 
     <script src="js/modelo/conta.js"></script>
     <script src="js/modelo/conta-bonificada.js"></script>
