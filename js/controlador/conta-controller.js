@@ -22,17 +22,26 @@ class ContaController {
         const numeroConta = elementoNumero.value.trim();
         const saldoConta = Number(elementoSaldo.value.trim());
 
+        if (numeroConta === "") {
+            window.alert("Preencha o campo 'Número' para criar a conta.");
+            return;
+        }
+
         if (elementoTipoConta.value == "conta-bonificada") {
             const conta = new ContaBonificada(numeroConta, saldoConta);
             this.adicionarConta(conta);
             this.inserirContaNoHtml(conta);
         } else if (elementoTipoConta.value == "conta-poupanca") {
-            const elementoDataAniversario = document.querySelector('#data_aniversario');
+            const elementoDataAniversario = document.querySelector('#data-aniversario');
+            if (elementoDataAniversario.value == "") {
+                window.alert("Campo 'Data Aniversário' é obrigatório.");
+                return;
+            }
             const conta = new Poupanca(numeroConta, saldoConta, elementoDataAniversario.value);
             this.adicionarConta(conta);
             this.inserirContaNoHtml(conta);
         } else if (elementoTipoConta.value == "conta-normal") {
-            const conta = new Conta(numeroConta, Number(saldoConta));
+            const conta = new Conta(numeroConta,saldoConta);
             this.adicionarConta(conta);
             this.inserirContaNoHtml(conta);
         } else {
