@@ -34,7 +34,7 @@ class ContaController {
         } else if (elementoTipoConta.value == "conta-poupanca") {
             const elementoDataAniversario = document.querySelector('#data-aniversario');
             if (elementoDataAniversario.value == "") {
-                window.alert("Campo 'Data Aniversário' é obrigatório.");
+                window.alert("Campo 'Data Aniversário' é obrigatório para conta Poupança.");
                 return;
             }
             const conta = new Poupanca(numeroConta, saldoConta, elementoDataAniversario.value);
